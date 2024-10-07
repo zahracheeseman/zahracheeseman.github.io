@@ -1,288 +1,494 @@
 <!DOCTYPE html>
-<html>
-<head>
-    
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    
-        <script>
-            L_NO_TOUCH = false;
-            L_DISABLE_3D = false;
-        </script>
-    
-    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
-    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
-    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
-    
-            <meta name="viewport" content="width=device-width,
-                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-            <style>
-                #map_7f0e55404f4146065fd99e8a40c4f7ab {
-                    position: relative;
-                    width: 100.0%;
-                    height: 100.0%;
-                    left: 0.0%;
-                    top: 0.0%;
-                }
-                .leaflet-container { font-size: 1rem; }
-            </style>
-        
-</head>
-<body>
-    
-    
-            <div class="folium-map" id="map_7f0e55404f4146065fd99e8a40c4f7ab" ></div>
-        
-</body>
-<script>
-    
-    
-            var map_7f0e55404f4146065fd99e8a40c4f7ab = L.map(
-                "map_7f0e55404f4146065fd99e8a40c4f7ab",
-                {
-                    center: [50.95843, -0.13287],
-                    crs: L.CRS.EPSG3857,
-                    zoom: 10,
-                    zoomControl: true,
-                    preferCanvas: false,
-                }
-            );
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">Zahra Cheeseman</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#soccer">Soccer</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">Zahra Cheeseman</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#soccer" onclick="toggleMenu()">Soccer</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+    <section id="profile">
+      <div class="section__pic-container">
+        <img src="./assets/zahra_cheeseman_headshot.jpg" alt="Zahra Cheeseman profile picture" />
+      </div>
+      <div class="section__text">
+        <p class="section__text__p1">Hello, I'm</p>
+        <h1 class="title">Zahra Cheeseman</h1>
+        <p class="section__text__p2">Aspiring Software Engineer</p>
+        <div class="btn-container">
+          <button
+            class="btn btn-color-2"
+            onclick="window.open('./assets/resume.pdf')"
+          >
+            Download Resume
+          </button>
+          <button class="btn btn-color-1" onclick="location.href='./#contact'">
+            Contact Info
+          </button>
+        </div>
+        <div id="socials-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="My LinkedIn profile"
+            class="icon"
+            onclick="location.href='https://www.linkedin.com/in/zahra-cheeseman/'"
+          />
+          <img
+            src="./assets/github.png"
+            alt="My Github profile"
+            class="icon"
+            onclick="location.href='https://github.com/zahracheeseman'"
+          />
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <p class="section__text__p1">Get To Know More</p>
+      <h1 class="title">About Me</h1>
+      <div class="section-container">
+        <div class="section__pic-container">
+          <img
+            src="./assets/sram.jpg"
+            alt="Profile picture"
+            class="about-pic"
+          />
+        </div>
+        <div class="about-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <img
+                src="./assets/experience.png"
+                alt="Experience icon"
+                class="icon"
+              />
+              <h3>Experience</h3>
+              <p>Software Engineer Intern<br />Undergraduate Computer Science Researcher</p>
+            </div>
+            <div class="details-container">
+              <img
+                src="./assets/education.png"
+                alt="Education icon"
+                class="icon"
+              />
+              <h3>Education</h3>
+              <p>Computer Science and Mathematics double major at Colorado College</p>
+            </div>
+          </div>
+          <div class="text-container">
+            <p>
+              My name is Zahra Cheeseman, and I am a senior at Colorado College studying a double
+              major of Mathematics and Computer Science. This summer I worked for Hammerhead and
+              SRAM as a software engineer intern, working as part of a cross functional agile team
+              releasing software for the Karoo, Hammerhead's cycling computer, in 2 week sprints. I
+              am also a 2024 Women in Sports Tech Fellow, and I am searching for post-grad software
+              roles in the sports technology industry. I moved from my home in England to play division 1
+              soccer and have previously played for the Moroccan Womens National team and Brighton and Hove
+              Academy.
+            </p>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#experience'"
+      />
+    </section>
 
-            
+    <section id="skills">
+      <p class="section__text__p1">See my</p>
+      <h1 class="title">Skills</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container">
+            <h2 class="experience-sub-title">Languages</h2>
+            <div class="article-container">
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Python</h3>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Java</h3>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Kotlin</h3>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>C</h3>
+                </div>
+              </article>
 
-        
-    
-            var tile_layer_d2915cda6fe372eacaf3fa0381ef6924 = L.tileLayer(
-                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            );
-        
-    
-            tile_layer_d2915cda6fe372eacaf3fa0381ef6924.addTo(map_7f0e55404f4146065fd99e8a40c4f7ab);
-        
-    
-            var marker_e5b26ef7b844317d25aea3db8e76baa4 = L.marker(
-                [51.0068116394, -0.10650957396],
-                {}
-            ).addTo(map_7f0e55404f4146065fd99e8a40c4f7ab);
-        
-    
-            var icon_9b47930baa7b1427c135d98001885396 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
-            );
-            marker_e5b26ef7b844317d25aea3db8e76baa4.setIcon(icon_9b47930baa7b1427c135d98001885396);
-        
-    
-        var popup_5359dbe45122da1232dfebb6fa11d424 = L.popup({"maxWidth": "100%"});
+            </div>
+          </div>
 
-        
-            
-                var html_6ab768a4e0b8d81f0a2a41fcee591fd6 = $(`<div id="html_6ab768a4e0b8d81f0a2a41fcee591fd6" style="width: 100.0%; height: 100.0%;">                 <h1><b> 2002 </h1></b>                 I was born 8th November 2002. I grew up in Haywards Heath as an only child. My Dad is                  English, and my Mum is French, with Moroccan heritage.                  <img src="child.JPG" width="200" height="270">                 </div>`)[0];
-                popup_5359dbe45122da1232dfebb6fa11d424.setContent(html_6ab768a4e0b8d81f0a2a41fcee591fd6);
-            
-        
 
-        marker_e5b26ef7b844317d25aea3db8e76baa4.bindPopup(popup_5359dbe45122da1232dfebb6fa11d424)
-        ;
+          <div class="details-container">
+            <h2 class="experience-sub-title">Databases</h2>
+            <div class="article-container">
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>MySQL</h3>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>SQLite</h3>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>MongoDB</h3>
+                </div>
+              </article>
 
-        
-    
-    
-            var marker_c952b81620e6ed330aa08759d5a38415 = L.marker(
-                [50.95843, -0.13287],
-                {}
-            ).addTo(map_7f0e55404f4146065fd99e8a40c4f7ab);
-        
-    
-            var icon_db06e5118627566c588cf7d09c711741 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
-            );
-            marker_c952b81620e6ed330aa08759d5a38415.setIcon(icon_db06e5118627566c588cf7d09c711741);
-        
-    
-        var popup_51b8b1ca9a80e315983ffb3825b6ab67 = L.popup({"maxWidth": "100%"});
+            </div>
+          </div>
 
-        
-            
-                var html_d35259b32a57082bbfe30de6dbec9e1b = $(`<div id="html_d35259b32a57082bbfe30de6dbec9e1b" style="width: 100.0%; height: 100.0%;">                 <h1><b> 2010- 2015 </h1></b>                 I started my football career at the grassroots club Southdowns FC at around 7 years old. I have                  always                  been a goalkeeper. This was my first experience of being part of a team, and I think                   showed me the importance of friendship and collaboration. My love for football started here                  and has inspired a lot of my subsequent decisions in life.                  Here is a photo of me winning my first ever trophy!-                 <img src="southdowns.JPG" width="200" height="200">                 </div>`)[0];
-                popup_51b8b1ca9a80e315983ffb3825b6ab67.setContent(html_d35259b32a57082bbfe30de6dbec9e1b);
-            
-        
 
-        marker_c952b81620e6ed330aa08759d5a38415.bindPopup(popup_51b8b1ca9a80e315983ffb3825b6ab67)
-        ;
+          <div class="details-container">
+            <h2 class="experience-sub-title">Tools</h2>
+            <div class="article-container">
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>PyTorch</h3>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Transformers</h3>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>RX Java</h3>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Git</h3>
+                </div>
+              </article>
+            </div>
+          </div>
 
-        
-    
-    
-            var marker_07d23c4c10e6dcb549643ddac29ba379 = L.marker(
-                [51.01073, -0.14068],
-                {}
-            ).addTo(map_7f0e55404f4146065fd99e8a40c4f7ab);
-        
-    
-            var icon_f8df31941a035923d50e4c974853a879 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
-            );
-            marker_07d23c4c10e6dcb549643ddac29ba379.setIcon(icon_f8df31941a035923d50e4c974853a879);
-        
-    
-        var popup_4b9b81412324c1c65c2d755139f7237c = L.popup({"maxWidth": "100%"});
 
-        
-            
-                var html_bcac42a5a7bef26e66cdb8a7c34898ca = $(`<div id="html_bcac42a5a7bef26e66cdb8a7c34898ca" style="width: 100.0%; height: 100.0%;">                 <h1><b> 2014- 2019 </h1></b>                 I went to Warden Park Secondary Academy where I sat my GCSEs. I have loved maths from a young                 age and in England you have to specialise in your academic interests extremely early.                 So here, I was already tailoring my academic journey towards STEM subjects, particulary maths.                 Here's me on my leavers day-                 <img src="warden.JPG" width="200" height="270">                 </div>`)[0];
-                popup_4b9b81412324c1c65c2d755139f7237c.setContent(html_bcac42a5a7bef26e66cdb8a7c34898ca);
-            
-        
 
-        marker_07d23c4c10e6dcb549643ddac29ba379.bindPopup(popup_4b9b81412324c1c65c2d755139f7237c)
-        ;
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#projects'"
+      />
+    </section>
 
-        
-    
-    
-            var marker_89c808d070d95ed82b0d62cace778c8b = L.marker(
-                [50.82882, -0.32247],
-                {}
-            ).addTo(map_7f0e55404f4146065fd99e8a40c4f7ab);
-        
-    
-            var icon_39bf0d84f6c9b968cf277957895a023c = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
-            );
-            marker_89c808d070d95ed82b0d62cace778c8b.setIcon(icon_39bf0d84f6c9b968cf277957895a023c);
-        
-    
-        var popup_4fab08ae21aba9a88f41819f6046e714 = L.popup({"maxWidth": "100%"});
 
-        
-            
-                var html_04a3c59c4b7acc59c91cdb27bbe65b5d = $(`<div id="html_04a3c59c4b7acc59c91cdb27bbe65b5d" style="width: 100.0%; height: 100.0%;">                 <h1><b> 2015- 2020 </h1></b>                 I played in the Brighton Academy from 13 to 17 years old. I would describe                  the academy system in England as high-pressured and at times ruthless, but                 I had access to many high level resources for football development.                 Here, I cultivated my high work ethic, drive and time-management as I was doing this                  whilst studying for, and taking, important exams.                  I had my first team debut in 2019-                  <img src="brighton.JPG" width="350" height="200">                 </div>`)[0];
-                popup_4fab08ae21aba9a88f41819f6046e714.setContent(html_04a3c59c4b7acc59c91cdb27bbe65b5d);
-            
-        
 
-        marker_89c808d070d95ed82b0d62cace778c8b.bindPopup(popup_4fab08ae21aba9a88f41819f6046e714)
-        ;
+   <section id="Experience">
+      <p class="section__text__p1">Explore my</p>
+      <h1 class="title">Experience</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
 
-        
-    
-    
-            var marker_9ee0df4ea347abc5f2299156ed17a2e5 = L.marker(
-                [50.8742, 0.00772],
-                {}
-            ).addTo(map_7f0e55404f4146065fd99e8a40c4f7ab);
-        
-    
-            var icon_1f818aa9f32121918fb8bf38764724f5 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
-            );
-            marker_9ee0df4ea347abc5f2299156ed17a2e5.setIcon(icon_1f818aa9f32121918fb8bf38764724f5);
-        
-    
-        var popup_7c40d98d3e3db3e748eaa66436e00d88 = L.popup({"maxWidth": "100%"});
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/hammerhead.png"
+                alt="hammerhead"
+                class="hammerhead"
+              />
+            <h2 class="experience-sub-title project-title">Software Engineering Intern</h2>
+            <h3 class="section__text__p1">Hammerhead/SRAM</h3>
+           <p>
+             Implemented a machine learning model on the Karoo, an android based cycling computer.
+             Utilised Kotlin, RX Java for data streaming, and AWS cloud.
+             Worked as part of a cross functional Agile SCRUM software development team.
+             </p>
 
-        
-            
-                var html_cbfc28cebe68006499644000026d339e = $(`<div id="html_cbfc28cebe68006499644000026d339e" style="width: 100.0%; height: 100.0%;">                 <h1><b> 2021 </h1></b>                 I played for Lewes FC for a season. I had an amazing time and got the experience of playing with                  a professional team and I have been playing there over the holidays too.                  Lewes is known as 'Equality FC',                  and became the first gender equal club in the world in 2017 when they allocated the same                  playing budget and resources for the men's and women's teams. They use their platform                  for social good, as an example,                  I helped organise an event to                  raise money for an LGBTQ+ charity. As a community club with purpose, I realised the potential                 and importance of sport and football for something bigger and it has inspired me to want to                  explore this further. When I was here, I was actually exposed to WiST via IDA, a boot                 company who make boots specifically for women.                 <img src="lewes.JPG" width="350" height="200">                 <img src="lewes1.JPG" width="250" height="200">                 </div>`)[0];
-                popup_7c40d98d3e3db3e748eaa66436e00d88.setContent(html_cbfc28cebe68006499644000026d339e);
-            
-        
+            </div>
+            </div>
 
-        marker_9ee0df4ea347abc5f2299156ed17a2e5.bindPopup(popup_7c40d98d3e3db3e748eaa66436e00d88)
-        ;
+          <br>
 
-        
-    
-    
-            var marker_12e24ca2dd0d24d9763bbfcf096156f5 = L.marker(
-                [34.01325, -6.83255],
-                {}
-            ).addTo(map_7f0e55404f4146065fd99e8a40c4f7ab);
-        
-    
-            var icon_e828a09b3827dc3c4f0c70ec0124d048 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
-            );
-            marker_12e24ca2dd0d24d9763bbfcf096156f5.setIcon(icon_e828a09b3827dc3c4f0c70ec0124d048);
-        
-    
-        var popup_49c641a3f3450e08a064155eeb2d288b = L.popup({"maxWidth": "100%"});
 
-        
-            
-                var html_4aa274847f0883520ebde9b6469068b1 = $(`<div id="html_4aa274847f0883520ebde9b6469068b1" style="width: 100.0%; height: 100.0%;">                 <h1><b> 2021 </h1></b>                 I got my first team debut with the Moroccan National Team! It was a new and amazing experience                 that was definitely out of my comfort zone. I had to navigate being with a new team in a new                 country, and training and interacting with people in two other languages- French and Arabic (which                  I don't know too well).                 I was recently there for an u23 camp too.                 <a href="https://en.wikipedia.org/wiki/Zahra_Cheeseman">Here's my wiki page</a>                 <img src="morocco.JPG" width="200" height="250">                 </div>`)[0];
-                popup_49c641a3f3450e08a064155eeb2d288b.setContent(html_4aa274847f0883520ebde9b6469068b1);
-            
-        
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/wist.png"
+                alt="wist"
+                class="wist"
+              />
+            </div>
+            <br>
+            <br>
+            <br>
+            <h2 class="experience-sub-title project-title">2024 Women in Sports Tech Fellow</h2>
+            <p>
+              Program which is aiming to change the ratio and provide guidance and opportunities to women in the sports technology sector.
+             Amazing summer experience learning and connecting to women with valuable knowledge and experience.
+             </p>
 
-        marker_12e24ca2dd0d24d9763bbfcf096156f5.bindPopup(popup_49c641a3f3450e08a064155eeb2d288b)
-        ;
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/cc.png"
+                alt="cc"
+                class="cc"
+              />
+            </div>
 
-        
-    
-    
-            var marker_c72db25f24805b9a86ccf7c8e92505f5 = L.marker(
-                [50.93388, -0.18007],
-                {}
-            ).addTo(map_7f0e55404f4146065fd99e8a40c4f7ab);
-        
-    
-            var icon_8d3d7491925a9e3925984db2bed3e926 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
-            );
-            marker_c72db25f24805b9a86ccf7c8e92505f5.setIcon(icon_8d3d7491925a9e3925984db2bed3e926);
-        
-    
-        var popup_c2979c7d6ded36704be377c243c26859 = L.popup({"maxWidth": "100%"});
+            <h2 class="experience-sub-title project-title">Undergraduate CS Researcher</h2>
+            <h3 class="section__text__p1">Machine Learning</h3>
+            <p>
+              Developed and implemented a neural network model in Python using PyTorch Geometric to evaluate the change of linear assignments between two graphs
+              over 100 epochs.
+            </p>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#contact'"
+      />
+    </section>
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+    <section id="projects">
+      <p class="section__text__p1">Browse My Recent</p>
+      <h1 class="title">Projects</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container color-container">
 
-        
-            
-                var html_0ad07f448fd75e46ca76289c4e870fca = $(`<div id="html_0ad07f448fd75e46ca76289c4e870fca" style="width: 100.0%; height: 100.0%;">                 <h1><b> 2019-2021 </h1></b>                 I got an academic scholarship to go to Hurstpierpoint College, a private school                 (yes, it does look a bit like Hogwarts!), for my A-Levels.                 I acheived 4 A*s in Maths, Further Maths, Chemistry and Biology- the best results                 that you could get and ones that I am extremely happy with and feel reflects my hard work.                  I had a very rigorous schedule whilst balancing my high level football,                 but covid heavily impacted my experience. It was a new experience with new kinds of people,                  and opened my eyes to the                  possibilities of academia.                 <img src="hurst.JPG" width="200" height="250">                 </div>`)[0];
-                popup_c2979c7d6ded36704be377c243c26859.setContent(html_0ad07f448fd75e46ca76289c4e870fca);
-            
-        
+            <h2 class="experience-sub-title project-title">Neural Network Research</h2>
+            <br>
+            <p> GitHub repo in relation to undergraduate research in computer science.</p>
+            <br>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/zahracheeseman/neural_net_research'"
+              >
+                Github
+              </button>
+            </div>
+          </div>
 
-        marker_c72db25f24805b9a86ccf7c8e92505f5.bindPopup(popup_c2979c7d6ded36704be377c243c26859)
-        ;
+          <div class="details-container color-container">
+            <div class="article-container">
+            </div>
+            <h2 class="experience-sub-title project-title">Football Betting Software</h2>
+            <p> Software Design Project </p>
+            <br>
+            <p> Took English premier league data from a historic season, and allowed users to retrospectively bet on
+              games and keep track of returns with in game currency
+</p>
+            <br>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/zahracheeseman/footybettor'"
+              >
+                Github
+              </button>
+            </div>
+          </div>
 
-        
-    
-    
-            var marker_abbabaef901514c9779e6a7c39c1cb1c = L.marker(
-                [38.8571, -104.7229],
-                {}
-            ).addTo(map_7f0e55404f4146065fd99e8a40c4f7ab);
-        
-    
-            var icon_bccf85bf36f8b3d571e729af5528e252 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
-            );
-            marker_abbabaef901514c9779e6a7c39c1cb1c.setIcon(icon_bccf85bf36f8b3d571e729af5528e252);
-        
-    
-        var popup_c244f9bcb70b06d518d091bcf518095c = L.popup({"maxWidth": "100%"});
+          <div class="details-container color-container">
+            <h2 class="experience-sub-title project-title"> Natural Language Processing Project</h2>
+            <br>
+            <p>  Fine-tuned a pre-trained model on academic texts and abstracts for text summarisation using Transformers to
+generate summaries for website created by team member. </p>
+            <br>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/conorwell/levelUpProject"
+              >
+                Github
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#contact'"
+      />
+    </section>
 
-        
-            
-                var html_c8f696f0fe4fa3318a552b33ba071f66 = $(`<div id="html_c8f696f0fe4fa3318a552b33ba071f66" style="width: 100.0%; height: 100.0%;">                 <h1><b> 2021-present </h1></b>                 I am currently studying a maths and computer science double major at Colorado College,                  a small liberal arts college in Colorado Springs. I am the first in my immediate family to get                 a degree.                 I also play Division 1 Women's Soccer,                  and have been working at the on-campus gym since my first year,                  which allows me to be a big part of the community, which I love. I decided                  to move across the world for my education so that I could gain a better and more                 acheivable balance between football and my studies, and do feel that I have an improved                  balance in my life. I took my first ever computer science                  class my freshman year, and loved how it was a tangible, enjoyable and exciting way to                  apply my problem solving skills from maths- and I knew immediately I wanted to make                  it an additional major.                 I have met the most amazing people here and have fallen in love with the mountains. These are                 my housemates-                 <img src="rommates.JPG" width="200" height="250">                 </div>`)[0];
-                popup_c244f9bcb70b06d518d091bcf518095c.setContent(html_c8f696f0fe4fa3318a552b33ba071f66);
-            
-        
+    <section id="Soccer">
+      <p class="section__text__p1">See my journey</p>
+      <h1 class="title">Soccer</h1>
+      <div class="section__pic-container">
+      <img
+            src="./assets/brighton.JPG"
+            alt="Brighton"
+          />
+      <img
+            src="./assets/morocco.jpg"
+            alt="Morocco"
+          />
+      <img
+            src="./assets/soccer.jpg"
+            alt="Soccer"
+          />
 
-        marker_abbabaef901514c9779e6a7c39c1cb1c.bindPopup(popup_c244f9bcb70b06d518d091bcf518095c)
-        ;
+        </div>
 
-        
-    
-</script>
+      <div class="text-container">
+        <br>
+        <br>
+            <p>
+              I have played football for my whole life! I grew up in the Brighton Academy, played for the profession club
+              Lewes FC and the Moroccan National Team. I now play division 1 soccer at Colorado College. Sports have
+              had a very big part in my life since I was young. I love the people that I have met throughout my life
+              playing soccer, and I value the relationships I have been able to build as part of a team. It has allowed
+              me to develop leadership, time management and organisational skills.
+            </p>
+          </div>
+
+
+
+    </section>
+
+    <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img
+            src="./assets/email.png"
+            alt="Email icon"
+            class="icon contact-icon email-icon"
+          />
+          <p><a href="mailto:zahracheeseman@gmail.com">zahracheeseman@gmail.com</a></p>
+        </div>
+        <div class="contact-info-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="LinkedIn icon"
+            class="icon contact-icon"
+          />
+          <p><a href="https://www.linkedin.com/in/zahra-cheeseman/">LinkedIn</a></p>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#soccer">Soccer</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <!-- <p>Copyright &#169; 2024 Zahra Cheeseman. All Rights Reserved.</p> -->
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>
